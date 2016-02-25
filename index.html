@@ -9,9 +9,53 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
+    <div class="page-header">
+      <p class='header'>
+        Guaranteed Awesome!
+      </p>
+      <h1 class='welcome'><em>Welcome to MEAN tea!</em></h1>
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <ul class="nav navbar-nav">
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="search">
+      <label for="category">Search by category:</label>
+      <select id='category' ng-model='category'>
+        <option value='dark'>dark</option>
+        <option value='cold'>cold</option>
+        <option value='awesome'>awesome</option>
+        <option value='dry'>dry</option>
+        <option value='hot'>hot</option>
+        <option value='summer'>summer</option>
+        <option value='lucid'>lucid</option>
+        <option value='warm'>warm</option>
+        <option value='winter'>winter</option>
+        <option value='spring'>spring</option>
+      </select>
+      <label for="name">Search by name:</label>
+      <input type="search" id='name' ng-model='searchable.name' class='s'>
+      <a class="btn btn-danger" id='checkout' href="#" role="button">Checkout | Bag:</a>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <th>Tea</th>
+        <th>Information</th>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/controllers/main_controller.js"></script>
   </body>
