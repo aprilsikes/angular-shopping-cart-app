@@ -10,14 +10,12 @@
   </head>
   <body ng-controller='MainController'>
     <div class="page-header">
-      <p class='header'>
-        Guaranteed Awesome!
-      </p>
+      <h3 class='header'>Guaranteed Awesome!</h3>
       <h1 class='welcome'><em>Welcome to MEAN tea!</em></h1>
       <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
+        <div class="container" id='nav'>
           <ul class="nav navbar-nav">
-            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="/#/">Home</a></li>
             <li role="presentation"><a href="#">About</a></li>
             <li role="presentation"><a href="#">Contact</a></li>
           </ul>
@@ -25,43 +23,7 @@
       </nav>
     </div>
 
-    <div class='container'>
-      <div class='row'>
-        <div class="pull-left search">
-          <label for="category">Search by category:</label>
-          <select id='category' ng-model='searchable.category'>
-            <option value='dark'>dark</option>
-            <option value='cold'>cold</option>
-            <option value='awesome'>awesome</option>
-            <option value='dry'>dry</option>
-            <option value='hot'>hot</option>
-            <option value='summer'>summer</option>
-            <option value='lucid'>lucid</option>
-            <option value='warm'>warm</option>
-            <option value='winter'>winter</option>
-            <option value='spring'>spring</option>
-          </select>
-          <label for="name">Search by name:</label>
-          <input type="search" id='name' ng-model='searchable.name' class='s'>
-        </div>
-        <div class='pull-right'>
-          <a class="btn btn-danger" id='checkout' href="#" role="button">Checkout | Bag:</a>
-        </div>
-      </div>
-    </div>
-
-    <table class="table table-bordered">
-      <thead>
-        <th>Tea</th>
-        <th>Information</th>
-      </thead>
-      <tbody ng-repeat='tea in teas | filter:searchable'>
-        <tr>
-          <td><img ng-src='{{tea.imageUrl}}'></td>
-          <td>{{tea.name}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div ng-view></div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>

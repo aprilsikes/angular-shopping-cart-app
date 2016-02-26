@@ -3,11 +3,11 @@ var app = angular.module('april', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'index.html',
+        templateUrl: 'partials/home.html',
         controller: 'MainController'
       })
-      .when('/hello', {
-        templateUrl: 'partials/hello.html',
-        controller: 'HelloController'
+      .when('/cart', {
+        templateUrl: 'partials/cart.html',
+        controller: 'CartController'
       })
 });

@@ -9,7 +9,7 @@
   font-weight: bold;
 }
 
-.container {
+#nav {
   background-color: #F8F6F8;
 }
 
@@ -22,4 +22,23 @@
 
 #checkout {
   align-self: flex-end;
+}
+
+/*.infoHeader {
+  display: flex;
+  flex-direction: row;
+}*/
+
+.teaPic {
+  max-width: 250px;
+}
+
+.teaInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.teaName {
+  display: flex;
+  flex-direction: row;
 }
