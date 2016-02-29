@@ -1,0 +1,35 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="pull-left">
+      <h3>My Shopping Bag</h3>
+    </div>
+    <div class="pull-right">
+      <h3 class='total'>Order total: {{orderTotal}}</h3>
+    </div>
+  </div>
+</div>
+
+<table class='table table-bordered'>
+  <thead>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Sub-total</th>
+  </thead>
+  <tbody ng-repeat='item in cart'>
+    <td>
+      <p>{{item.name}}</p>
+      <p>{{item.imageUrl}}</p>
+      <p>{{item.caffeineScale}}</p>
+      <p>{{item.ingredients}}</p>
+      <p>{{item.rating}}</p>
+    </td>
+    <td ng-hide='showQuantity'>{{item.quantity}}</td>
+    <td ng-show='editQuantity'><input type="text" ng-model='teaQuantity' placeholder='item.quantity'></td>
+    <td>{{sub-total}}</td>
+    <td>
+      <button class="btn btn-warning" type="submit" ng-click='toggleEdit()'>Edit</button>
+      <button class="btn btn-danger" type="submit">Remove</button>
+    </td>
+  </tbody>
+</table>

@@ -19,7 +19,7 @@
       <input type="search" ng-model='searchable.name'>
     </div>
     <div class='pull-right'>
-      <a class="btn btn-danger" id='checkout' href="#" role="button">Checkout | Bag: {{buttonValue}}</a>
+      <a class="btn btn-danger" id='checkout' href="/#/cart" role="button">Checkout | Bag: {{buttonValue}}</a>
     </div>
   </div>
 </div>
@@ -31,21 +31,21 @@
     <th>Information
       <span class='pull-right'>
         <label>Sort by Price:</label>
-        <select ng-model='orderProp'>
+        <select ng-model='orderPrice'>
           <option value='highest'>Highest</option>
           <option value='lowest'>Lowest</option>
         </select>
       </span>
     </th>
   </thead>
-  <tbody ng-repeat='tea in teas | orderBy:orderProp:sortReverse | filter:searchable'>
+  <tbody ng-repeat='tea in teas | orderBy:orderPrice:sortReverse | filter:searchable'>
     <tr>
       <td class='teaPic'><img ng-src='{{tea.imageUrl}}'></td>
       <td class='teaInfo'>
         <div class='teaName'>
           <h3>{{tea.name}}</h3>
             <label>Quantity:</label>
-            <select>
+            <select ng-model='quantity'>
               <option value='1' selected>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -57,7 +57,7 @@
               <option value='9'>9</option>
               <option value='10'>10</option>
             </select>
-          <button class="btn btn-warning" type="submit">Add To Bag</button>
+          <button class="btn btn-warning" type="submit" ng-click='addItem(tea)'>Add To Bag</button>
         </div>
         <div class="teaStuff">
           <p>Price: {{tea.price/100 | currency}}</p>
