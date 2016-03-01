@@ -3,6 +3,7 @@ app.controller('CartController', ['$scope', 'teaService', function ($scope, teaS
   $scope.getItems = function () {
     // console.log(teaService.getItems());
     var cart = teaService.getItems();
+    console.log(cart);
     return cart;
     }
 
