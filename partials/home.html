@@ -19,7 +19,7 @@
       <input type="search" ng-model='searchable.name'>
     </div>
     <div class='pull-right'>
-      <a class="btn btn-danger" id='checkout' href="/#/cart" role="button">Checkout | Bag: {{buttonValue}}</a>
+      <a href="/#/cart"><button class="btn btn-danger" ng-click='getItems()'>Checkout | Bag: {{buttonValue}}</button></a>
     </div>
   </div>
 </div>
@@ -32,32 +32,36 @@
       <span class='pull-right'>
         <label>Sort by Price:</label>
         <select ng-model='orderPrice'>
-          <option value='highest'>Highest</option>
-          <option value='lowest'>Lowest</option>
+          <option value='-price'>Highest</option>
+          <option value='+price'>Lowest</option>
         </select>
       </span>
     </th>
   </thead>
-  <tbody ng-repeat='tea in teas | orderBy:orderPrice:sortReverse | filter:searchable'>
+  <tbody ng-repeat='tea in teas | orderBy:orderPrice | filter:searchable'>
     <tr>
       <td class='teaPic'><img ng-src='{{tea.imageUrl}}'></td>
       <td class='teaInfo'>
         <div class='teaName'>
-          <h3>{{tea.name}}</h3>
-            <label>Quantity:</label>
-            <select ng-model='quantity'>
-              <option value='1' selected>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-            </select>
-          <button class="btn btn-warning" type="submit" ng-click='addItem(tea)'>Add To Bag</button>
+          <div class='pull-left'>
+            <h3>{{tea.name}}</h3>
+          </div>
+          <div class='pull-right'>
+              <label>Quantity:</label>
+              <select ng-model='tea.quantity'>
+                <option value='1' selected>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+              </select>
+            <button class="btn btn-warning" ng-click='addItem(tea)'>Add To Bag</button>
+          </div>
         </div>
         <div class="teaStuff">
           <p>Price: {{tea.price/100 | currency}}</p>

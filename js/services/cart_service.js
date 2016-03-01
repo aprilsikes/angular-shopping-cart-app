@@ -1,17 +1,19 @@
-// app.service('cartService', ['$scope', function ($scope) {
-//   var cart = {};
-//   cart.items = [];
+// app.service('cartService', [function () {
+//   var cart = [];
+//   // cart.items = [];
 //
-//   cart.addItem = function() {
-//     var item = {};
-//     item.name = name;
-//     item.imageUrl = imageUrl;
-//     item.caffeineScale = caffeineScale;
-//     item.ingredients = ingredients;
-//     item.rating = rating;
-//     item.quantity = quantity;
-//     item.price = price;
-//     cart.items.push(item);
+//
+//   cart.addItem = function(tea) {
+//     // var item = {};
+//     // item.name = tea.name;
+//     // item.imageUrl = tea.imageUrl;
+//     // item.caffeineScale = tea.caffeineScale;
+//     // item.ingredients = tea.ingredients;
+//     // item.rating = tea.rating;
+//     // item.quantity = tea.quantity;
+//     // item.price = tea.price;
+//     cart.push(tea);
+//     console.log(cart);
 //   };
 //
 //   // cart.editItem = function (item) {
@@ -19,7 +21,7 @@
 //   // }
 //
 //   cart.removeItem = function(index) {
-//     cart.items.splice(index, 1);
+//     cart.splice(index, 1);
 //   };
 //
 //   return cart;
