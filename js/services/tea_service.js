@@ -15,25 +15,22 @@ app.service('teaService', ['$http', function ($http) {
       return cart;
     },
 
-    removeItem: function(index) {
-      cart.splice(index, 1);
-      return cart;
+    removeItem: function(item) {
+      cart.splice(item, 1);
     },
 
-    // orderTotal: function(item) {
-    //     var total = 0;
-    //     var cart = teaService.getItems();
-    //     for (var i = 0; i < cart.length; i++) {
-    //       total += (item.quantity * item.price)/100;
-    //     }
-    //     console.log(total);
-    //     return total;
-    // }
+    orderTotal: function(item) {
+        var total = 0;
+        var array = this.getItems();
+        for (var i = 0; i < array.length; i++) {
+          total += (array[i].quantity * array[i].price)/100;
+        }
+        return '$'+total.toFixed(2);
+    },
 
-    // toggleEdit: function () {
-    //   editQuantity = !editQuantity;
-    //   showQuantity = !showQuantity;
-    // }
+    editItem: function (item) {
+      
+    }
   }
 
   // return {

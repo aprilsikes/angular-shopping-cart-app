@@ -14,5 +14,4 @@ app.controller('MainController', ['$scope', 'teaService', function ($scope, teaS
     teaService.getItems();
   }
 
-
 }]);

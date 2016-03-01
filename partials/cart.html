@@ -25,11 +25,11 @@
       <p><strong>Rating:</strong> {{item.rating}}</p>
     </td>
     <td ng-hide='showQuantity'>{{item.quantity}}</td>
-    <td ng-show='editQuantity'><input type="text" ng-model='teaQuantity' placeholder='item.quantity'></td>
+    <td ng-show='editQuantity'><input type="text" ng-model='teaQuantity' placeholder='{{item.quantity}}'></td>
     <td>{{(item.price * item.quantity)/100 | currency}}</td>
     <td>
-      <button class="btn btn-warning" type="submit" ng-click='toggleEdit()'>Edit</button>
-      <button class="btn btn-danger" type="submit">Remove</button>
+      <button class="btn btn-warning" type="submit" ng-click='toggleEdit()'>{{editSave}}</button>
+      <button class="btn btn-danger" type="submit" ng-click='removeItem($index)'>Remove</button>
     </td>
   </tbody>
 </table>

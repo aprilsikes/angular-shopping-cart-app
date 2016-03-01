@@ -1,14 +1,17 @@
 app.controller('CartController', ['$scope', 'teaService', function ($scope, teaService) {
-
+    $scope.editSave = 'Edit'
+    $scope.editQuantity = false;
     $scope.cart = teaService.getItems();
     console.log($scope.cart);
-    // $scope.orderTotal = function() {
-    //     var total = 0;
-    //     for (var i = 0; i < $scope.cart.length; i++) {
-    //       total += (item.quantity * item.price)/100;
-    //     }
-    //     console.log(total);
-    //     return total;
-    // }
+    $scope.orderTotal = teaService.orderTotal();
+    $scope.toggleEdit = function () {
+      this.editQuantity = !this.editQuantity;
+      this.showQuantity = !this.showQuantity;
+      this.editSave = 'Save';
+    }
+    $scope.removeItem = function () {
+      teaService.removeItem();
+      $scope.orderTotal = teaService.orderTotal();
 
+    }
 }]);
