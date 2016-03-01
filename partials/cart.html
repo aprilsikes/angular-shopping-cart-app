@@ -18,15 +18,15 @@
   </thead>
   <tbody ng-repeat='item in cart'>
     <td>
-      <p>{{item.name}}</p>
-      <p>{{item.imageUrl}}</p>
-      <p>{{item.caffeineScale}}</p>
-      <p>{{item.ingredients}}</p>
-      <p>{{item.rating}}</p>
+      <p><strong class='name'>{{item.name}}</strong></p>
+      <p><img ng-src='{{item.imageUrl}}'></p>
+      <p><strong>Caffeine Scale:</strong> {{item.caffeineScale}}</p>
+      <p><strong>Ingredients:</strong> {{item.ingredients}}</p>
+      <p><strong>Rating:</strong> {{item.rating}}</p>
     </td>
     <td ng-hide='showQuantity'>{{item.quantity}}</td>
     <td ng-show='editQuantity'><input type="text" ng-model='teaQuantity' placeholder='item.quantity'></td>
-    <td>{{sub-total}}</td>
+    <td>{{(item.price * item.quantity)/100 | currency}}</td>
     <td>
       <button class="btn btn-warning" type="submit" ng-click='toggleEdit()'>Edit</button>
       <button class="btn btn-danger" type="submit">Remove</button>

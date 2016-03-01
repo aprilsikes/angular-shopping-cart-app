@@ -44,10 +44,10 @@
       <td class='teaInfo'>
         <div class='teaName'>
           <div class='pull-left'>
-            <h3>{{tea.name}}</h3>
+            <h3><strong>{{tea.name}}</strong></h3>
           </div>
           <div class='pull-right'>
-              <label>Quantity:</label>
+              <label><strong>Quantity:</strong></label>
               <select ng-model='tea.quantity'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
@@ -64,12 +64,12 @@
           </div>
         </div>
         <div class="teaStuff">
-          <p>Price: {{tea.price/100 | currency}}</p>
-          <p>Caffeine Scale: {{tea.caffeineScale}}</p>
-          <p>Ingredients: {{tea.ingredients}}</p>
-          <p>Rating: {{tea.rating}}</p>
-          <p>In Stock? {{tea.inStock ? 'Yes' : 'No'}}</p>
-          <div>Categories:
+          <p><strong>Price:</strong> {{tea.price/100 | currency}}</p>
+          <p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
+          <p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
+          <p><strong>Rating:</strong> {{tea.rating}}</p>
+          <p><strong>In Stock?</strong> {{tea.inStock ? 'Yes' : 'No'}}</p>
+          <div><strong>Categories:</strong>
             <ul ng-repeat='category in tea.categories'>
               <li>{{category}}</li>
             </ul>

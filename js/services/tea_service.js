@@ -7,39 +7,29 @@ app.service('teaService', ['$http', function ($http) {
     },
 
     addItem: function(tea) {
-      // var item = {};
-      // item.name = tea.name;
-      // item.imageUrl = tea.imageUrl;
-      // item.caffeineScale = tea.caffeineScale;
-      // item.ingredients = tea.ingredients;
-      // item.rating = tea.rating;
-      // item.quantity = tea.quantity;
-      // item.price = tea.price;
-      console.log('Getting this!');
       cart.push(tea);
-      console.log(tea);
-      console.log(cart);
       return cart;
     },
 
     getItems: function () {
-      console.log(cart);
       return cart;
     },
 
     removeItem: function(index) {
       cart.splice(index, 1);
       return cart;
-    }
+    },
 
-    // // displayItem: function () {
-    // //   return cart;
-    // // }
-    //
-    // removeItem: function(index) {
-    //   return cart.splice(index, 1);
-    // },
-    //
+    // orderTotal: function(item) {
+    //     var total = 0;
+    //     var cart = teaService.getItems();
+    //     for (var i = 0; i < cart.length; i++) {
+    //       total += (item.quantity * item.price)/100;
+    //     }
+    //     console.log(total);
+    //     return total;
+    // }
+
     // toggleEdit: function () {
     //   editQuantity = !editQuantity;
     //   showQuantity = !showQuantity;
