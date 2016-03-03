@@ -9,9 +9,8 @@ app.controller('CartController', ['$scope', 'teaService', function ($scope, teaS
       this.showQuantity = !this.showQuantity;
       this.editSave = 'Save';
     }
-    $scope.removeItem = function () {
-      teaService.removeItem();
+    $scope.removeItem = function (item) {
+      teaService.removeItem(item);
       $scope.orderTotal = teaService.orderTotal();
-
     }
 }]);

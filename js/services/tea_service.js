@@ -28,16 +28,9 @@ app.service('teaService', ['$http', function ($http) {
         return '$'+total.toFixed(2);
     },
 
-    editItem: function (item) {
-      
-    }
+    // editItem: function (item) {
+    //
+    // }
   }
 
-  // return {
-  //   editItem: function (tea) {
-  //
-  //   }
-  // }
-
-  // if
 }]);
