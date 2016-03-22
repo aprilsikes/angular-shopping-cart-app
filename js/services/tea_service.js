@@ -6,7 +6,8 @@ app.service('teaService', ['$http', function ($http) {
       return $http.get('../../tea.json');
     },
 
-    addItem: function(tea) {
+    addItem: function(tea, qty) {
+      qty == undefined ? tea.quantity = 1 : tea.quantity = Number(qty)
       cart.push(tea);
       return cart;
     },
@@ -26,11 +27,8 @@ app.service('teaService', ['$http', function ($http) {
           total += (array[i].quantity * array[i].price)/100;
         }
         return '$'+total.toFixed(2);
-    },
+    }
 
-    // editItem: function (item) {
-    //
-    // }
   }
 
 }]);

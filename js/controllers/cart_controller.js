@@ -2,7 +2,6 @@ app.controller('CartController', ['$scope', 'teaService', function ($scope, teaS
     $scope.editSave = 'Edit'
     $scope.editQuantity = false;
     $scope.cart = teaService.getItems();
-    console.log($scope.cart);
     $scope.orderTotal = teaService.orderTotal();
     $scope.toggleEdit = function () {
       this.editQuantity = !this.editQuantity;

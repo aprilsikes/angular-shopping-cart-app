@@ -13,22 +13,6 @@
   background-color: #F8F6F8;
 }
 
-.search {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-}
-
-#checkout {
-  align-self: flex-end;
-}
-
-/*.infoHeader {
-  display: flex;
-  flex-direction: row;
-}*/
-
 .teaPic {
   max-width: 250px;
 }
