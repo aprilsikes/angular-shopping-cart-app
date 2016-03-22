@@ -1,0 +1,9 @@
+{
+  "firebase": "rilsi-mean-tea",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
