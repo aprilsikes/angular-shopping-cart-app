@@ -6,7 +6,7 @@ app.controller('MainController', ['$scope', 'teaService', function ($scope, teaS
   })
 
   $scope.addItem = function (tea, qty) {
-    teaService.addItem();
+    teaService.addItem(tea, qty);
     $scope.buttonValue = '('+teaService.getItems().length+')'
   }
 

@@ -8,7 +8,8 @@ app.service('teaService', ['$http', function ($http) {
 
     addItem: function(tea, qty) {
       qty == undefined ? tea.quantity = 1 : tea.quantity = Number(qty)
-      cart.push(tea);
+      cart.push(tea, qty);
+      console.log(cart);
       return cart;
     },
 
